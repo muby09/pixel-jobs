@@ -1,7 +1,5 @@
 # Pixel Jobs
 
-[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/muby09/pixel-jobs)
-
 Pixel Jobs is a job board application built with the Laravel framework. It provides a platform for employers to post job listings and for job seekers to search and filter for opportunities. The application features a clean, modern user interface built with Tailwind CSS and Blade components.
 
 ## Features
