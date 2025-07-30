@@ -1,15 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @layer base {
+    @import "tailwindcss/preflight";
+}
+@layer components {
+    @import "tailwindcss/components";
+}
 
-/* @import 'tailwindcss'; */
+@layer utilities {
+    @import "tailwindcss/utilities";
+} */
+
+@import "tailwindcss";
+/*@import "base";
+@import "components";
+
+@import "tailwindcss/preflight";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities"; */
+
+/* @source "../views"; */
 
 /* @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php'; */
 /* @source '../../storage/framework/views/*.php'; */
 /* @source '..*.js'; */
 /* @source '..*.blade.php'; */
-
-/* @theme {  */
-/* --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif, */
-/* "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
-/* } */
+/*
+@theme {
+    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+} */
+/* body {
+    background: red;
+    border: 10px solid red;
+} */
