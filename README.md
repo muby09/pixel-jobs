@@ -1,61 +1,99 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Pixel Jobs
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Pixel Jobs is a job board application built with the Laravel framework. It provides a platform for employers to post job listings and for job seekers to search and filter for opportunities. The application features a clean, modern user interface built with Tailwind CSS and Blade components.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-   **Employer Authentication:** Secure registration and login for employers.
+-   **Job Management:** Employers can create, and list job postings.
+-   **Dynamic Job Listings:** The homepage displays both "Featured" and "Recent" job sections.
+-   **Tagging System:** Jobs can be categorized with tags, allowing for easy filtering.
+-   **Search Functionality:** Users can search for jobs based on titles.
+-   **Responsive UI:** A clean and modern interface built with Tailwind CSS and modular Blade components.
+-   **Database Seeding:** Comes with pre-configured seeders to populate the application with sample jobs and tags for development and testing.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   **Backend:** PHP 8.2+, Laravel 12
+-   **Frontend:** Tailwind CSS, Blade, Vite
+-   **Database:** SQLite (default), MySQL, PostgreSQL
+-   **Testing:** Pest
 
-## Learning Laravel
+## Getting Started
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Prerequisites
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+-   PHP >= 8.2
+-   Composer
+-   Node.js & npm
+-   A database server (SQLite is the default)
 
-## Laravel Sponsors
+### Installation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1.  **Clone the repository:**
+    ```sh
+    git clone https://github.com/muby09/pixel-jobs.git
+    cd pixel-jobs
+    ```
 
-### Premium Partners
+2.  **Install PHP dependencies:**
+    ```sh
+    composer install
+    ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+3.  **Install JavaScript dependencies:**
+    ```sh
+    npm install
+    ```
 
-## Contributing
+4.  **Set up your environment file:**
+    Copy the example environment file and generate an application key.
+    ```sh
+    cp .env.example .env
+    php artisan key:generate
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5.  **Configure the database:**
+    By default, the application is configured to use SQLite. Simply create the database file:
+    ```sh
+    touch database/database.sqlite
+    ```
+    If you prefer to use another database like MySQL, update the `DB_*` variables in your `.env` file accordingly.
 
-## Code of Conduct
+6.  **Run database migrations and seeding:**
+    This command will create the necessary tables and populate the database with sample jobs and tags.
+    ```sh
+    php artisan migrate --seed
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+7.  **Build frontend assets:**
+    ```sh
+    npm run build
+    ```
 
-## Security Vulnerabilities
+### Running the Application
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+To serve the application locally, you can use the Artisan `serve` command:
 
-## License
+```sh
+php artisan serve
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+For a more comprehensive development experience that includes the server, queue listener, logs, and Vite asset bundling, use the custom `dev` script:
+
+```sh
+composer run dev
+```
+
+The application will be available at `http://127.0.0.1:8000`.
+
+## Testing
+
+The application uses Pest for testing. To run the test suite, use the following command:
+
+```sh
+composer test
+```
+This will execute all the feature and unit tests located in the `tests/` directory.
