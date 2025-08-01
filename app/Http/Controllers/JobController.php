@@ -62,4 +62,12 @@ class JobController extends Controller
         }
         return redirect('/');
     }
+    public function show()
+    {
+        $jobs = Job::latest()->with('employer', 'tags')->get();
+
+        return view('jobs.show', [
+            'jobs' => $jobs
+        ]);
+    }
 }

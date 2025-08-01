@@ -12,6 +12,8 @@ Route::get('/', [JobController::class, 'index']);
 
 Route::get('/jobs/create', [JobController::class, 'create'])->Middleware('auth');
 Route::post('/jobs', [JobController::class, 'store'])->Middleware('auth');
+Route::get('/jobs', [JobController::class, 'show'])->Middleware('auth');
+
 
 Route::get('/search', SearchController::class);
 Route::get('/tags/{tag:name}', TagController::class);
